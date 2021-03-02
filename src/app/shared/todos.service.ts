@@ -20,6 +20,6 @@ export class TodoService {
   }
 
   removeTodo(id: number) {
-    this.todos = this.todos.filter(t => t.id !== id)
+    this.todos = this.todos.filter(t => t.id !== id);
   }
 }
