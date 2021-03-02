@@ -1,15 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
+import { Todo, TodoService } from "../shared/todos.service";
 
 @Component({
-  selector: 'app-create-todo',
-  templateUrl: './create-todo.component.html',
-  styleUrls: ['./create-todo.component.css']
+  selector: "app-create-todo",
+  templateUrl: "./create-todo.component.html",
+  styleUrls: ["./create-todo.component.css"]
 })
 export class CreateTodoComponent implements OnInit {
+  title: string = "";
 
-  constructor() { }
+  constructor(private todoService: TodoService) {}
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  addTodo() {
+    const todo: Todo = {
+      title: this.title,
+      id: Date.now(),
+      completed: false
+    };
+    this.todoService.add(todo);
   }
-
 }
