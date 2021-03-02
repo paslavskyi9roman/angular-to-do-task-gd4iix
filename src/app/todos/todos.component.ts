@@ -1,19 +1,20 @@
 import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
-import { Todo } from "../app.component";
+import { TodoService } from "../shared/todos.service";
 @Component({
   selector: "app-todos",
   templateUrl: "./todos.component.html",
   styleUrls: ["./todos.component.css"]
 })
 export class TodosComponent implements OnInit {
-  @Input() todos: Todo[];
-  @Output() onToggle = new EventEmitter<number>();
-
-  constructor() {}
+  constructor(private todosService: TodoService) {}
 
   ngOnInit() {}
 
   changeHandler(id: number) {
-    this.onToggle.emit(id);
+    this.todosService.onToggle(id);
+  }
+
+  removeTodo(id: number) {
+    this.todosService.removeTodo(id);
   }
 }

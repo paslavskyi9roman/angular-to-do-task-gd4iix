@@ -1,12 +1,12 @@
 <ul>
-	<li *ngFor="let todo of todos; let i = index">
+	<li *ngFor="let todo of todosService.todos; let i = index">
 		<span [class.done]="todo.completed">
       <input type="checkbox" [checked]="todo.completed"(change)="changeHandler(todo.id)" >
 	  	<strong>{{i + 1 }}</strong>
 		{{todo.title}}
     </span>
 
-		<button class="del">&times;</button>
+		<button class="del" (click)="removeTodo(todo.id)">&times;</button>
 	</li>
 
 </ul>
