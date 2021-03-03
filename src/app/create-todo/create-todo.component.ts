@@ -19,6 +19,6 @@ export class CreateTodoComponent implements OnInit {
       id: Date.now(),
       completed: false
     };
-    this.todoService.add(todo);
+    this.todoService.addTodo(todo);
   }
 }
