@@ -6,6 +6,8 @@ import { TodoService } from "../shared/todos.service";
   styleUrls: ["./todos.component.css"]
 })
 export class TodosComponent implements OnInit {
+  private search = ''
+
   constructor(private todosService: TodoService) {}
 
   ngOnInit() {}

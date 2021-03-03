@@ -6,6 +6,7 @@ import { AppComponent } from "./app.component";
 import { HelloComponent } from "./hello.component";
 import { TodosComponent } from "./todos/todos.component";
 import { CreateTodoComponent } from './create-todo/create-todo.component';
+import { TodosFilterPipe } from "./shared/todos-filter.pipe";
 
 @NgModule({
   imports: [BrowserModule, FormsModule],
@@ -14,6 +15,7 @@ import { CreateTodoComponent } from './create-todo/create-todo.component';
     HelloComponent,
     TodosComponent,
     CreateTodoComponent,
+    TodosFilterPipe
   ],
   bootstrap: [AppComponent]
 })

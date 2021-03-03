@@ -1,5 +1,12 @@
+<div class="filter"
+>
+<input type="text"
+placeholder="Filter todo by title"
+[(ngModel)]="search"
+>
+</div>
 <ul>
-	<li *ngFor="let todo of todosService.todos; let i = index">
+	<li *ngFor="let todo of todosService.todos | todosFilter:search; let i = index">
 		<span [class.done]="todo.completed">
       <input type="checkbox" [checked]="todo.completed"(change)="changeHandler(todo.id)" >
 	  	<strong>{{i + 1 }}</strong>
