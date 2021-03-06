@@ -23,4 +23,9 @@ export class TodosComponent implements OnInit {
   removeAllTodo() {
     this.todosService.removeAllTodo();
   }
+
+  remaining() {
+    return this.todosService.remaining();
+    
+  }
 }

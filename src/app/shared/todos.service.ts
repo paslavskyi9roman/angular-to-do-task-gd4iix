@@ -14,6 +14,10 @@ export class TodoService {
     { id: 3, title: "Learn spanish", completed: false }
   ];
 
+  addTodo(todo: Todo) {
+    this.todos.push(todo);
+  }
+
   onToggle(id: number) {
     const idx = this.todos.findIndex(t => t.id === id);
     this.todos[idx].completed = !this.todos[idx].completed;
@@ -27,7 +31,7 @@ export class TodoService {
     this.todos = this.todos.filter(t => !t.completed);
   }
 
-  addTodo(todo: Todo) {
-    this.todos.push(todo);
+  remaining() {
+    return this.todos.filter(t => !t.completed).length;
   }
 }

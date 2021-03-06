@@ -14,5 +14,6 @@ placeholder="Filter todo by title"
 
 			<button class="del" (click)="removeTodo(todo.id)">&times;</button>
 		</li>
+		<p>Remaining: {{remaining()}}</p>
 		<button (click)="removeAllTodo()">Hide completed</button>
 	</ul>
