@@ -6,7 +6,7 @@ import { TodoService } from "../shared/todos.service";
   styleUrls: ["./todos.component.css"]
 })
 export class TodosComponent implements OnInit {
-  private search = ''
+  private search = "";
 
   constructor(private todosService: TodoService) {}
 
@@ -18,5 +18,9 @@ export class TodosComponent implements OnInit {
 
   removeTodo(id: number) {
     this.todosService.removeTodo(id);
+  }
+
+  removeAllTodo() {
+    this.todosService.removeAllTodo();
   }
 }

@@ -23,7 +23,11 @@ export class TodoService {
     this.todos = this.todos.filter(t => t.id !== id);
   }
 
+  removeAllTodo() {
+    this.todos = this.todos.filter(t => !t.completed);
+  }
+
   addTodo(todo: Todo) {
-    this.todos.push(todo)
+    this.todos.push(todo);
   }
 }
